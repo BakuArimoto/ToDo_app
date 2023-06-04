@@ -1,8 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic import ListView
+from .models import TodoModel
 
 # Create your views here.
 
-def todo(Request):
-    returnobject = HttpResponse('hello todi')
-    return returnobject
+class TodoList(ListView):
+    template_name = 'list.html'
+    model = TodoModel

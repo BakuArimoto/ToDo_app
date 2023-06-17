@@ -2,21 +2,27 @@
 
 
 {% block header %}
-リストです
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Todolist</h1>
+    <p class="lead">Todolistを使って毎日を効率的に過ごしましょう。</p>
+  </div>
+</div>
 {% endblock header %}
 
 {% block content %}
-{% for item in object_list %}
+<div class="container">
+  {% for item in object_list %}
 
-<div class="alert alert-info" role="alert">
-  {{ item.title }}
+  <div class="alert alert-info" role="alert">
+    <p>{{ item.title }}</p>
+    <a href="#" class="btn btn-info " tabindex="-1" role="button" aria-disabled="true">編集</a>
+    <a href="#" class="btn btn-primary " tabindex="-1" role="button" aria-disabled="true">削除</a>
+    <a href="#" class="btn btn-success " tabindex="-1" role="button" aria-disabled="true">詳細</a>
+  </div>
+
+  {% endfor %}
 </div>
-
-<div class="alert alert-info" role="alert">
-  {{ item.memo }}
-</div>
-
-{% endfor %}
 {% endblock content %}
 
 

@@ -11,12 +11,19 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <div class="alert alert-primary" role="alert">
-        {{ object.title }}
-      </div>
-    <div class="alert alert-primary" role="alert">
-        {{ object.memo }}
-    </div>
+    <h1>Hello, world!</h1>
+    <!-- これはHTMLのコメントアウトの書き方 -->
+
+    <!-- ListViesを指定することでobject_listを使用することができるが、データベースの中身をリストで持っているオブジェクトのこと -->
+    <!-- pythonのforを始めるためにはこのように書く -->
+    {% for item in object_list %}
+
+    <!-- データベースから取り出してきたitemを表示している。. を用いることでitemのなかの属性を指定している -->
+    {{ item.title }}
+    {{ item.memo }}
+
+    <!-- pythonのforを終えるためにこのように書く -->
+    {% endfor %}
 
     <!-- Optional JavaScript; choose one of the two! -->
 

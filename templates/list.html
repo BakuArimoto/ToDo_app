@@ -1,12 +1,22 @@
-<!-- これはHTMLのコメントアウトの書き方 -->
+{% extends 'base.html'%}
 
-<!-- ListViesを指定することでobject_listを使用することができるが、データベースの中身をリストで持っているオブジェクトのこと -->
-<!-- pythonのforを始めるためにはこのように書く -->
+
+{% block header %}
+リストです
+{% endblock header %}
+
+{% block content %}
 {% for item in object_list %}
 
-<!-- データベースから取り出してきたitemを表示している。. を用いることでitemのなかの属性を指定している -->
-{{ item.title }}
-{{ item.memo }}
+<div class="alert alert-info" role="alert">
+  {{ item.title }}
+</div>
 
-<!-- pythonのforを終えるためにこのように書く -->
+<div class="alert alert-info" role="alert">
+  {{ item.memo }}
+</div>
+
 {% endfor %}
+{% endblock content %}
+
+
